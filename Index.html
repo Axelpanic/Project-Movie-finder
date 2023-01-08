@@ -3,20 +3,92 @@
     <head>
             <!--document type and links-->
         <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
         <link rel="stylesheet" href="./Assets/css/Style.css">
         <title>Movie Finder</title>
     </head>
+    
     <!--header-->
-    <Header>
-<h1> Move Finder</h1>
+    <Header class="hero is-info is-small">
+        <div class="hero-body">
+            <div class="container has-text-centered">
+              <p class="title">
+                Movie Finder
+              </p>
+              <p class="subtitle">
+                A better way to know a movie
+              </p>
+            </div>
+          </div>
     </Header>
 <!--main body, main code-->
     <body>
+        <!--search bar-->
+        <section class="box">
+            <div class="level">
+                <input class="input is-info" type="text" placeholder="Search Movie">
+                <button class="button is-info ml-2">Search</button>
+            </div>
+        </section>
+        <!--additional field here for IMDB info-->
+        <section class="columns">
+            <div class="column is-three-quarters-desktop" id="IMDB info">
+                <div class="box">
+                </div>
+            </div>
+        <!--additional field here for Wiki info on side bar-->
+            <div class="column is-one-quarter-desktop" id="Wiki sidebar">
+                <div class="box">
+                    
+                </div>
+            </div>
+        </section>
+
+        <!--cards below for additional movies If wanted-->
+        <section class="columns">
+            <div class="column is-one-quarter-desktop">
+                <div class="card">
+                    <div class="card-image">
+                        <figure class="image is-3by4">
+                            <img src="placeholder" alt="movie poster">
+                        </figure>
+                    </div>
+                </div>
+            </div>
+            <div class="column is-one-quarter-desktop">
+                <div class="card">
+                    <div class="card-image">
+                        <figure class="image is-3by4">
+                            <img src="placeholder" alt="movie poster">
+                        </figure>
+                    </div>
+                </div>
+            </div>
+            <div class="column is-one-quarter-desktop">
+                <div class="card">
+                    <div class="card-image">
+                        <figure class="image is-3by4">
+                            <img src="placeholder" alt="movie poster">
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        </section>
 
     </body>
 <!--bottom most footer, containing our names and license info-->
-    <footer>
-        <h5>Project created by Sam, JJ, and Alex.</h5>
+    <footer class="footer">
+        <div class="content is-small has-text-centered">
+          <p>
+            <h5> Project created by Sam, JJ, and Alex. The project uses:</h5>
+            <span></span>
+            <strong>Bulma</strong> by <a href="https://jgthms.com">Jeremy Thomas</a>. The source code is licensed
+            <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
+            is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
+          </p>
+        </div>
+      </footer>
         <script src="./assets/js/Script.js"></script>
     </footer>
 
