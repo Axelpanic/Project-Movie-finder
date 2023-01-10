@@ -27,6 +27,7 @@ function searchApi(movieName){
         
         })
 
+        
 }
 
 document.getElementById("myBtn").addEventListener("click", displaySearch);
