@@ -1,12 +1,21 @@
 // Project by Sam, JJ, and Alex
-searchInput = document.querySelector('#search-input')
+var inputEl = document.querySelector('#search-input');
+
+document.getElementById("butt").addEventListener("click", formSubmitEvent);
+
+//function displaySearch() {
+// document.getElementById("#search-input") = inputValue;
+//}
+//displaySearch(inputValue);
 
 // function prevents a default search input
-function FormSubmitEvent(event) {
+function formSubmitEvent(event) {
     event.preventDefault();
 
     var inputValue = document.querySelector('#search-input').value;
 
+
+    // cHANGE TO MODAl
   if (!inputValue) {
     alert('Must search a movie');
     return;
@@ -14,13 +23,13 @@ function FormSubmitEvent(event) {
 searchApi(inputValue)
 }
 
-function searchApi(movieName){
-    console.log(movieName);
+function searchApi(inputValue) {
+    console.log(inputValue);
     
     // Generated API key
     // http://www.omdbapi.com/?i=tt3896198&apikey=639261e3
 
-    fetch ('http://www.omdbapi.com/?i=tt3896198'+ movieName + "&apikey=639261e3")
+    fetch ('http://www.omdbapi.com/?t='+ inputValue + "&apikey=639261e3")
         .then(response => response.json())
         .then(data => {
             console.log(data)
@@ -29,11 +38,3 @@ function searchApi(movieName){
 
         
 }
-
-document.getElementById("myBtn").addEventListener("click", displaySearch);
-
-function displaySearch() {
-  document.getElementById("input").innerHTML = searchInput();
-}
-
-displaySearch();
