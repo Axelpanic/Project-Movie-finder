@@ -2,6 +2,7 @@
 var inputEl = document.querySelector('#search-input');
 
 document.getElementById("butt").addEventListener("click", formSubmitEvent);
+var searchInput = document.querySelector("#search-input");
 
 //function displaySearch() {
 // document.getElementById("#search-input") = inputValue;
@@ -20,6 +21,8 @@ function formSubmitEvent(event) {
     alert('Must search a movie');
     return;
   }
+    storeSearchHistory(inputValue);
+
 searchApi(inputValue)
 }
 
@@ -38,3 +41,19 @@ function searchApi(inputValue) {
 
         
 }
+//commit to local storage
+function getSearchHistory() {
+    var history = localStorage.getItem("searchHistory");
+
+    if (history === null) {
+        return [];
+    } else {
+        return JSON.parse(history);
+    }
+};
+
+function storeSearchHistory(movieTitle) {
+    var history = getSearchHistory();
+    history.push(movieTitle);
+    localStorage.setItem("searchHistory", JSON.stringify(history));
+};
