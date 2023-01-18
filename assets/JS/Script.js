@@ -5,14 +5,17 @@ var requestOptions = {
   redirect: 'follow'
 };
 
-document.getElementById("butt").addEventListener("click", formSubmitEvent);
+document.getElementById("button").addEventListener("click", formSubmitEvent);
 var searchInput = document.querySelector("#search-input");
+console.log(inputValue)
 
 
 // function prevents a default search input
 function formSubmitEvent(event) {
     event.preventDefault();
     
+    var inputValue = document.querySelector('#search-input').value;
+
   if (!inputValue) {
     openModal();
     return;
