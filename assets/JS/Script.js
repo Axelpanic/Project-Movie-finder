@@ -1,15 +1,18 @@
 // Project by Sam, JJ, and Alex
 var inputEl = document.querySelector('#search-input');
+var requestOptions = {
+  method: 'GET',
+  redirect: 'follow'
+};
 
 document.getElementById("butt").addEventListener("click", formSubmitEvent);
 var searchInput = document.querySelector("#search-input");
 
+
 // function prevents a default search input
 function formSubmitEvent(event) {
     event.preventDefault();
-
-    var inputValue = document.querySelector('#search-input').value;
-
+    
   if (!inputValue) {
     openModal();
     return;
@@ -17,24 +20,34 @@ function formSubmitEvent(event) {
     storeSearchHistory(inputValue);
 
 searchApi(inputValue)
+
 }
 
 
 function searchApi(inputValue) {
     console.log(inputValue);
-    
+    var imdbId = ""
     // Generated API key
     // http://www.omdbapi.com/?i=tt3896198&apikey=639261e3
 
     fetch ('http://www.omdbapi.com/?t='+ inputValue + "&apikey=639261e3")
-        .then(response => response.json())
-        .then(data => {
-            console.log(data)
-        
-        })
-
-        
+        .then((response) => response.json())
+        .then((data) => { a = data;
+            console.log(a);
+            var imdbId = a.imdbID;
+            console.log(imdbId);
+            fetch('https://imdb-api.com/en/API/Title/k_u1amb416/' + imdbId, requestOptions)
+              .then(response => response.json())
+              .then(result => console.log(result))
+              
+            })
+            
+    
+  .catch(error => console.log('error', error));
 }
+
+//imdb api key = k_u1amb416 (limit 1k a day)
+
 //commit to local storage
 function getSearchHistory() {
     var history = localStorage.getItem("searchHistory");
