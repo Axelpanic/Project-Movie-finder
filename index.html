@@ -1,68 +1,70 @@
 <!DOCTYPE html>
 <html lang="en-us">
-    <head>
-            <!--document type and links-->
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-        <link rel="stylesheet" href="./Assets/css/Style.css">
-        <title>Movie Finder</title>
-    </head>
-    
-    <!--header-->
-    <Header class="hero is-info is-small">
-        <div class="hero-body">
-            <div class="container has-text-centered">
-              <p class="title">
-                Movie Finder
-              </p>
-              <p class="subtitle">
-                A better way to know a movie
-              </p>
-            </div>
-          </div>
-    </Header>
-    
-<!--main body, main code-->
-    <body>
-        <!--search bar-->
-        <section class="box mx-2">
-            <div class="level-item">
-                <input class="input is-info" type="text" id="search-input" placeholder="Search Movie">
-                <button class="button is-info ml-2" id="button">Search</button>
-            </div>
-        </section>
-        <!--additional field here for IMDB info-->
-        <section class="tile is-ancestor mx-2">
-            <div class="tile is-parent">
-                <article class="tile is-child box" id="IMDB">
-                    <p class="title has-text-centered" id="title"> </p>
-                    <p class="subtitle has-text-centered" id ="plot"> </p>
-                </article>
-                <article class="tile is-child box" id="b1">
-                    <h5> Starting:</h2>
-                        <p id="stars"></p>
-                    <h5> Released: </h5>
-                        <p id="released"></p>
-                </article>
-                <article class="tile is-child box" id="b2">
-                    <h5>Runtime:</h5>
-                    <p id="runtime"></p>
-                </article>
-            </div>
-            
-        <!--additional field here for Poster info on side bar-->
-        
-            <div class="tile is-4 is-parent">
-                <Article class="tile is-child box">
-                    <ul id="sidebar">
-                        <li id="poster">
 
-                        </li>
-                    </ul>
-                </article>
-            </div>
-            
+<head>
+    <!--document type and links-->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="./Assets/css/Style.css">
+    <title>Movie Finder</title>
+</head>
+
+<!--header-->
+<Header class="hero is-info is-small">
+    <div class="hero-body">
+        <div class="container has-text-centered">
+            <p class="title">
+                Movie Finder
+            </p>
+            <p class="subtitle">
+                A better way to know a movie
+            </p>
+        </div>
+    </div>
+</Header>
+
+<!--main body, main code-->
+
+<body>
+    <!--search bar-->
+    <section class="box mx-2">
+        <div class="level-item">
+            <input class="input is-info" type="text" id="search-input" placeholder="Search Movie">
+            <button class="button is-info ml-2" id="button">Search</button>
+        </div>
+    </section>
+    <!--additional field here for IMDB info-->
+    <section class="tile is-ancestor mx-2">
+        <div class="tile is-parent">
+            <article class="tile is-child box" id="IMDB">
+                <p class="title has-text-centered" id="title"> </p>
+                <p class="subtitle has-text-centered" id="plot"> </p>
+            </article>
+            <article class="tile is-child box" id="b1">
+                <h5> Starting:</h2>
+                    <p id="stars"></p>
+                    <h5> Released: </h5>
+                    <p id="released"></p>
+            </article>
+            <article class="tile is-child box" id="b2">
+                <h5>Runtime:</h5>
+                <p id="runtime"></p>
+            </article>
+        </div>
+
+        <!--additional field here for Poster info on side bar-->
+
+        <div class="tile is-4 is-parent">
+            <Article class="tile is-child box">
+                <ul id="sidebar">
+                    <li id="poster">
+
+                    </li>
+                </ul>
+            </article>
+        </div>
+
         <!--cards below for additional movies If wanted--
             <div class="tile is-parent ">
                 <article class="tile is-child card ">
@@ -98,43 +100,39 @@
                     </div>
                 </article>
             </div> -->
-            
-        </section>
-        <div id="modal-js-example" class="modal">
-            <div class="modal-background"></div>
-          
-            <div class="modal-content">
-              <div class="box">
-                <p>You must enter the name of a movie in the search bar. If there is no movie named matching your input, no results will be displayed</p>
-            </div>
-            </div>
-          
-            <button class="modal-close is-large" aria-label="close"></button>
-          </div>
-          
-          <!-- Tried adding style to the modal below -->
-<!-- 
-          <article class="message is-danger">
-            <div class="modal"
-            <div class="message-header">
-              <p>Danger</p>
-              <button class="modal-close is-large" aria-label="delete"></button>
-            </div>
-            <div class="box">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. <strong>Pellentesque risus mi</strong>, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum <a>felis venenatis</a> efficitur. Aenean ac <em>eleifend lacus</em>, in mollis lectus. Donec sodales, arcu et sollicitudin porttitor, tortor urna tempor ligula, id porttitor mi magna a neque. Donec dui urna, vehicula et sem eget, facilisis sodales sem.
-            </div>
-          </article> -->
 
-    </body>
+    </section>
+
+
+    <article class="message is-danger">
+        <div class="modal">
+            <div class="message-header">
+                <p>No Movie Found!</p>
+                <button class="delete" aria-label="delete" id="closeButton"></button>
+                <p>Danger</p>
+                <button class="modal-close is-large" aria-label="delete"></button>
+            </div>
+            <div class="message-body">
+                <p>You must enter the name of a movie in the search bar. If there is no movie name matching your input,
+                    no results will be displayed</p>
+                <figure class="media-center">
+                    <div class="media-content">
+                        <img src="./assets/images/search.png">
+                </figure>
+            </div>
+        </div>
+    </article>
+
+</body>
 
 <!--bottom most footer, containing our names and license info-->
-    <footer class="footer is-small">
-        <div class="content has-text-centered">
-          <p>
-            <h5> Project created by Sam, JJ, and Alex.</h5>
-          </p>
-        </div>
-      </footer>
-        <script src="./assets/JS/script.js"></script>
-        
+<footer class="footer is-small">
+    <div class="content has-text-centered">
+        <p>
+        <h5> Project created by Sam, JJ, and Alex.</h5>
+        </p>
+    </div>
+</footer>
+<script src="./assets/JS/script.js"></script>
+
 </html>
