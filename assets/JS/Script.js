@@ -4,15 +4,16 @@ var requestOptions = {
   method: 'GET',
   redirect: 'follow'
 };
+var mainEl = document.getElementById('IMDB')
+var sideEl = document.getElementById('sidebar')
 
 document.getElementById("button").addEventListener("click", formSubmitEvent);
 var searchInput = document.querySelector("#search-input");
-console.log(inputValue)
-
 
 // function prevents a default search input
 function formSubmitEvent(event) {
     event.preventDefault();
+    
     
     var inputValue = document.querySelector('#search-input').value;
 
@@ -23,7 +24,7 @@ function formSubmitEvent(event) {
     storeSearchHistory(inputValue);
 
 searchApi(inputValue)
-
+var imgUrl='';
 }
 
 
@@ -41,13 +42,18 @@ function searchApi(inputValue) {
             console.log(imdbId);
             fetch('https://imdb-api.com/en/API/Title/k_u1amb416/' + imdbId, requestOptions)
               .then(response => response.json())
-              .then(result => console.log(result))
-              
-            })
-            
-    
-  .catch(error => console.log('error', error));
-}
+              .then((data) => { 
+                console.log(data);
+                document.getElementById('title').textContent = data.title;
+                document.getElementById('plot').textContent = data.plot;
+                document.getElementById('stars').textcontent = data.stars;
+                document.getElementById('released').textcontent = data.releaseDate;
+                document.getElementById('runtime').textcontent = data.runtimeStr;  
+                var posterEl = document.getElementById('poster');
+                var imgUrl = document.createElement('img');
+                imgUrl.setAttribute('src',data.image);
+                posterEl.appendChild(imgUrl);    
+        })})}
 
 //imdb api key = k_u1amb416 (limit 1k a day)
 

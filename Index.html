@@ -33,18 +33,32 @@
         </section>
         <!--additional field here for IMDB info-->
         <section class="tile is-ancestor mx-2">
-            <div class="tile is-parent" id="IMDB info">
-                <article class="tile is-child box">
-                    <p class="title has-text-centered" id="IMDB title"> </p>
-                    <p class="subtitle has-text-centered"> </p>
+            <div class="tile is-parent">
+                <article class="tile is-child box" id="IMDB">
+                    <p class="title has-text-centered" id="title"> </p>
+                    <p class="subtitle has-text-centered" id ="plot"> </p>
+                </article>
+                <article class="tile is-child box" id="b1">
+                    <h5> Starting:</h2>
+                        <p id="stars"></p>
+                    <h5> Released: </h5>
+                        <p id="released"></p>
+                </article>
+                <article class="tile is-child box" id="b2">
+                    <h5>Runtime:</h5>
+                    <p id="runtime"></p>
                 </article>
             </div>
             
         <!--additional field here for Wiki info on side bar-->
         
-            <div class="tile is-4 is-parent" id="Wiki sidebar">
+            <div class="tile is-4 is-parent">
                 <Article class="tile is-child box">
-                    
+                    <ul id="sidebar">
+                        <li id="poster">
+
+                        </li>
+                    </ul>
                 </article>
             </div>
         <!--cards below for additional movies If wanted--
@@ -119,6 +133,7 @@
         </div>
       </footer>
         <script src="./assets/js/Script.js"></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
         
 
 </html>
