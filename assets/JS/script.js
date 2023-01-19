@@ -34,7 +34,7 @@ function searchApi(inputValue) {
     // Generated API key
     // https://www.omdbapi.com/?i=tt3896198&apikey=639261e3
 
-    fetch ('http://www.omdbapi.com/?t='+ inputValue + "&apikey=639261e3")
+    fetch ('https://www.omdbapi.com/?t='+ inputValue + "&apikey=639261e3")
         .then((response) => response.json())
         .then((data) => { a = data;
             console.log(a);
