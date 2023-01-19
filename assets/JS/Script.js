@@ -52,40 +52,13 @@ function storeSearchHistory(movieTitle) {
     localStorage.setItem("searchHistory", JSON.stringify(history));
 };
 
-const modal = document.getElementById("modal-js-example")
+const modal = document.getElementById("no-movie-found")
 
 function openModal() {
     modal.classList.add("is-active")
 }
-
-// const modalExit = document.getElementById("modal-close");
-// modalCloseButton.addEventListener('click', 'modal-modalCloseButton');
-// e.stopPropagation();
-// modal.classList.remove('is-active');
-
-document.addEventListener('DOMContentLoaded', () => {
-    // Functions to open and close a modal
-    function openModal($el) {
-      $el.classList.add('is-active');
-    }
-  
-    function closeModal($el) {
-      $el.classList.remove('is-active');
-    }
-  
-    // function closeAllModals() {
-    //   (document.querySelectorAll('.modal') || []).forEach(($modal) => {
-    //     closeModal($modal);
-    //   });
-    // }
-  
-    // Add a click event on various child elements to close the parent modal
-    (document.querySelectorAll('.modal-background, .modal-close, .modal-card-head .delete, .modal-card-foot .button') || []).forEach(($close) => {
-      const $target = $close.closest('.modal');
-  
-      $close.addEventListener('click', () => {
-        closeModal($target);
-      });
-    });
-  
-  });
+// function closes modal 
+const modalExit = document.getElementById("closeButton");
+modalExit.addEventListener('click', function() {
+  modal.classList.remove("is-active");
+});
