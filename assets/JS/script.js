@@ -32,7 +32,7 @@ function searchApi(inputValue) {
     console.log(inputValue);
     var imdbId = ""
     // Generated API key
-    // http://www.omdbapi.com/?i=tt3896198&apikey=639261e3
+    // https://www.omdbapi.com/?i=tt3896198&apikey=639261e3
 
     fetch ('http://www.omdbapi.com/?t='+ inputValue + "&apikey=639261e3")
         .then((response) => response.json())
