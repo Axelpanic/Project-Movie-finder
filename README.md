@@ -30,3 +30,8 @@ SO THAT I can learn about a movie with out having to watch first
 🎥 Application uses a CSS framework other than Bootstrap.
 
 🎥 Application is interactive (accepts and responds to user input).
+
+
+## Image
+
+![My Image](assets/image.png)
