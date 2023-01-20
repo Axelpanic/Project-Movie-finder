@@ -91,6 +91,6 @@ function openModal() {
 
 // function closes modal 
 const modalExit = document.getElementById("closeButton");
-modalExit.addEventListener('click', function () {
+modalExit.addEventListener('click', function() {
   modal.classList.remove("is-active");
 });
