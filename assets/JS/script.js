@@ -37,9 +37,15 @@ function searchApi(inputValue) {
   fetch('https://www.omdbapi.com/?t=' + inputValue + "&apikey=639261e3")
     .then((response) => response.json())
     .then((data) => {
-      a = data;
-      console.log(a);
-      var imdbId = a.imdbID;
+      console.log(data);
+      var ratings = data.Ratings;
+      var imdbR = ratings[0].Value;
+      var tomT = ratings[1].Value;
+      var metaC = ratings[2].Value;
+      document.getElementById('userrating').textContent = imdbR;
+      document.getElementById('toms').textContent = tomT;
+      document.getElementById('metacrit').textContent = metaC;
+      var imdbId = data.imdbID;
       console.log(imdbId);
       fetch('https://imdb-api.com/en/API/Title/k_u1amb416/' + imdbId, requestOptions)
         .then(response => response.json())
@@ -47,9 +53,9 @@ function searchApi(inputValue) {
           console.log(data);
           document.getElementById('title').textContent = data.title;
           document.getElementById('plot').textContent = data.plot;
-          document.getElementById('stars').textcontent = data.stars;
-          document.getElementById('released').textcontent = data.releaseDate;
-          document.getElementById('runtime').textcontent = data.runtimeStr;
+          document.getElementById('stars').textContent = data.stars;
+          document.getElementById('released').textContent = data.releaseDate;
+          document.getElementById('runtime').textContent = data.runtimeStr;
           var posterEl = document.getElementById('poster');
           var imgUrl = document.createElement('img');
           imgUrl.setAttribute('src', data.image);
