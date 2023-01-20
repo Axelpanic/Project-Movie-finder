@@ -14,7 +14,8 @@ var searchInput = document.querySelector("#search-input");
 function formSubmitEvent(event) {
   event.preventDefault();
 
-
+  var posterEl = "";
+  document.getElementById('poster').textContent = "";
   var inputValue = document.querySelector('#search-input').value;
 
   if (!inputValue) {
